@@ -12,3 +12,31 @@ html, body{
 .text-center{
   text-align: center;
 }
+
+.p-1{
+  padding: 1vh 1vw;
+}
+
+.p-2{
+  padding: 2vh 2vw;
+}
+.pl-1{
+  padding-left: 1vw;
+}
+.transparent-bg{
+  background-color: transparent;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.j-start{
+  justify-content: flex-start;
+}
+.j-center{
+  justify-content: center;
+}
+.a-center{
+  align-items: center;
+}
