@@ -6,7 +6,11 @@ html, body{
 }
 
 #root, .App, .mainLayout{
-  height: 100%;
+  min-height: 100vh;
+}
+
+.main {
+  min-height: 100% ;
 }
 
 .text-center{
@@ -36,6 +40,12 @@ html, body{
 }
 .j-center{
   justify-content: center;
+}
+.f-column{
+  flex-direction: column;
+}
+.f-row{
+  flex-direction: row;
 }
 .a-center{
   align-items: center;

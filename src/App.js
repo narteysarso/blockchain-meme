@@ -1,11 +1,12 @@
 import './App.css';
 import HomeLayout from './components/Layout/HomeLayout';
+import Meme from './components/Meme';
 
 function App() {
   return (
     <div className="App">
       <HomeLayout>
-        <h1>This is it</h1>
+        <Meme />
       </HomeLayout>
     </div>
   );
