@@ -18,8 +18,8 @@ export async function getWeb3(){
     return Object.freeze({
         account: async () => await getAccount(web3),
         networkId: async () => await getNetworkId(web3),
-        store: async (account, data) => await storeData(contract, account, data),
-        retrieve: async (account, idx) => await retrieveData(contract, account, idx ) ,
+        store: async (address, data) => await storeData(contract, address, data),
+        retrieve: async (account) => await retrieveData(contract, account) ,
     });
 }
 
@@ -37,16 +37,16 @@ const getContract = (web3, abi, address) => {
 }
 
 const storeData = async (contract, address, data) => {
-    return await contract.methods.store(address, data).send({
+    return await contract.methods.store(data).send({
         from: address,
     });
 }
 
-const retrieveData = async (contract, address, idx) => {
+const retrieveData = async (contract, address) => {
     if(!Web3.utils.isAddress){
         throw Error('Not a valid address')
     }
-    return await contract.methods.retrieve(address, idx).call();
+    return await contract.methods.retrieve(address).call();
 }
 function connectWeb3 () {
     const {ethereum, web3} = window;

@@ -7,6 +7,10 @@ export function AddToIPFS(data, callback = () => {}){
     if(!data){
         throw Error('No data provided');
     }
-
-    ipfs.add(data, callback);
+   
+    ipfs.add(data).then(result => {
+        callback(null, result);
+    }).catch( error => {
+        callback(error, null);
+    });
 }

@@ -28,6 +28,7 @@ export function useStore(account, data) {
                 const web3 = await getWeb3();
                 setTxHash(await web3.store(account, data));
             } catch (error) {
+                
                 setError(error.message)
             } finally {
                 setLoading(false);
@@ -39,17 +40,25 @@ export function useStore(account, data) {
     return [txHash, loading, error];
 }
 
-export function useRetrieve(account) {
+const hashCache = [];
+export function useRetrieve(account, hash) {
     const [history, setHistory] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
+
     useEffect(() => {
         (async () => {
             try {
+                
+                
                 setLoading(true);
                 const web3 = await getWeb3();
-                setHistory(await web3.retrieve(account));
+                
+                const results = await web3.retrieve(account);
+                setHistory(results);
+
+                hashCache[hash] = true;
 
             } catch (error) {
                 setError(error.message)
@@ -57,7 +66,7 @@ export function useRetrieve(account) {
                 setLoading(false);
             }
         })()
-    }, [account]);
+    }, [account, hash]);
 
     return [history, loading, error];
 }

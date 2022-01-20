@@ -15,16 +15,19 @@ export function useIPFS(){
                 return;
             }
             setLoading(true);
+            
             const callback = (error, results) => {
+                
                 if(error){
                     throw Error(error.message);
                 }
     
-                setHash(results[0]['path']);
+                setHash(results['path']);
             }
 
             const result = await readFileAsArrayBuffer(file);
 
+            
             AddToIPFS(result, callback)
     
             
