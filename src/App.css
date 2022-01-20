@@ -50,3 +50,6 @@ html, body{
 .a-center{
   align-items: center;
 }
+.j-around{
+  justify-content: space-around;
+}

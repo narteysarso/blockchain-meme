@@ -1,18 +1,25 @@
 //SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0 < 0.9.0;
+pragma solidity ^0.8.0;
 
 contract Meme {
-    mapping(address => string[]) memes;
+
+    struct Dtx{
+        string hash;
+    }
+    mapping(address => Dtx[]) memes;
+
 
     //write fxn 
     function store(string memory hashString) public {
-        memes[msg.sender].push(hashString);
+        memes[msg.sender].push(Dtx(hashString));
     }
 
     //read fxn
-    function retrieve(address _senderAddress, uint256 _pos) public view returns (string memory){
-        return memes[_senderAddress][_pos];
+    function retrieve(address _senderAddress) public view returns (Dtx[] memory){
+        return memes[_senderAddress];
     } 
+
+
 
 }
