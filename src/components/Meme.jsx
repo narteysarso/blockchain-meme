@@ -6,10 +6,13 @@ import { UploadedMeme } from "./UploadedMeme";
 
 export default function Meme() {
     
-    const {file, setFile, addData, history, account, hashLoading} = useContext(DappContext);
+    const {file, setFile, addData, history, account, storeLoading} = useContext(DappContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(!file){
+            return;
+        }
         addData(file);
     }
 
@@ -37,7 +40,7 @@ export default function Meme() {
                     <form onSubmit={handleSubmit}>
                         <Space>
                             <Input type="file" onChange={handleFileChange} />
-                            <Button type="primary" htmlType="submit" loading={hashLoading} >Submit</Button>
+                            <Button type="primary" htmlType="submit" loading={storeLoading} >Submit</Button>
                         </Space>
                     </form>
                 </div>

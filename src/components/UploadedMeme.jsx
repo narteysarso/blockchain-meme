@@ -4,8 +4,8 @@ export function UploadedMeme ({history, ...props}) {
     return (
         <>
         <Typography.Title level={3}>Upload Memes</Typography.Title>
-        <Row gutter={16} style={{ padding: '10px', }}>
-            {
+        <Row gutter={16} style={{ padding: '10px', }} justify="center">
+            { history.length ? 
                 history?.map((item, idx) => (
                     <Col span={4} key={idx}>
                         <Card className="grid-style" style={{ width: '100%' }}
@@ -22,7 +22,7 @@ export function UploadedMeme ({history, ...props}) {
                                 </Typography.Text>
                         </Card>
                     </Col>
-                )) || <Empty />
+                )) : <Empty />
             }
         </Row>
 </>
