@@ -14,7 +14,6 @@ export function useIPFS(){
             if(!file){
                 return;
             }
-            console.log(typeof file);
             setLoading(true);
             const callback = (error, results) => {
                 if(error){
