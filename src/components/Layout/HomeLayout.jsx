@@ -8,7 +8,7 @@ export default function HomeLayout ({children}){
             <Layout.Header className="transparent-bg p-1 d-flex j-between">
                 <div className="d-flex j-left a-center">
                     <Logo /> 
-                    <Typography.Title level={3} className="pl-1"> BlockMeme </Typography.Title>
+                    <Typography.Title level={3} className="pl-1"> Krypto Meme </Typography.Title>
                 </div>
                     
             </Layout.Header>

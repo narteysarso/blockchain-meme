@@ -36,7 +36,7 @@ export default function Meme() {
                 </div>
                 <Row className="p-2">
                     <Col xs={24} md={12} className="p-2" >
-                        <Typography.Title>The <span className="color-blue">Crypto Meme</span></Typography.Title>
+                        <Typography.Title>The <span className="color-blue">Krypto Meme</span></Typography.Title>
                         <Typography.Paragraph className="lora-text text-muted" style={{ fontSize: '18px', lineHeight: 1.8 }} >
                             This DApp enables you to save you meme on the blockchain <span style={{color: 'tomato'}}>(Ropsten Test Network)</span>.
                             If you're here, you're likely looking to find random words. Random Word Generator

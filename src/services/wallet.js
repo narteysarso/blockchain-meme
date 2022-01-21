@@ -2,8 +2,8 @@ import Web3 from 'web3';
 import Meme from '../abis/Meme.json';
 
 
-export async function getWeb3(){
-    
+export async function getWeb3() {
+
     const web3 = connectWeb3();
     const abi = Meme.abi;
     const memeNetwork = Meme.networks[await getNetworkId(web3)];
@@ -11,7 +11,7 @@ export async function getWeb3(){
     const contract = getContract(web3, abi, address);
 
 
-    if(!web3){
+    if (!web3) {
         throw Error('Metamusk is required');
     }
 
@@ -19,13 +19,13 @@ export async function getWeb3(){
         account: async () => await getAccount(web3),
         networkId: async () => await getNetworkId(web3),
         store: async (address, data) => await storeData(contract, address, data),
-        retrieve: async (account) => await retrieveData(contract, account) ,
+        retrieve: async (account) => await retrieveData(contract, account),
     });
 }
 
 const getAccount = async (web3) => {
     const accounts = await web3.eth.getAccounts();
-   return accounts[0];
+    return accounts[0];
 }
 
 const getNetworkId = async (web3) => {
@@ -43,20 +43,20 @@ const storeData = async (contract, address, data) => {
 }
 
 const retrieveData = async (contract, address) => {
-    if(!Web3.utils.isAddress){
+    if (!Web3.utils.isAddress) {
         throw Error('Not a valid address')
     }
     return await contract.methods.retrieve(address).call();
 }
-function connectWeb3 () {
-    const {ethereum, web3} = window;
+function connectWeb3() {
+    const { ethereum, web3 } = window;
 
-    if(ethereum){
+    if (ethereum) {
         ethereum.enable();
-        return new Web3(ethereum) 
+        return new Web3(ethereum)
     }
 
-    if(web3){
+    if (web3) {
         return new Web3(web3.currentProvider);
     }
 
