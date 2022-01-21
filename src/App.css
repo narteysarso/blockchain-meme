@@ -1,5 +1,7 @@
 @import '~antd/dist/antd.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+
 html, body{
   height: 100%;
   width: 100%;
@@ -9,6 +11,9 @@ html, body{
   min-height: 100vh;
 }
 
+.lora-text{
+  font-family: 'Lora', serif;
+}
 .main {
   min-height: 100% ;
 }
@@ -50,8 +55,14 @@ html, body{
 .a-center{
   align-items: center;
 }
+.j-evenly{
+  justify-content: space-evenly;
+}
 .j-around{
   justify-content: space-around;
+}
+.text-muted{
+  color: #373636d9;
 }
 
 .j-between{
@@ -61,4 +72,67 @@ html, body{
 .grid-style{
   width: 25%;
   text-align: 'center';
+}
+.color-blue{
+  color: #1890ff;
+}
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+
+  background-repeat: no-repeat;
+
+}
+.square{
+  width: 15vw;
+  height: 15vw;
+  background-color: white;
+  opacity: .35;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -7vw;
+  left: 10vw
+}
+.squable{
+  width: 15vw;
+  height: 22vw;
+  /* background-color: white; */
+  opacity: .35;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 35vw;
+  top: 20vh;
+}
+
+.squable:before,
+.squable:after {
+  content: "";
+  position: absolute;
+  background-image:linear-gradient(to right, white, white);
+
+}
+
+.squable:before {
+  top: 0;
+  height: 180%;
+  right: -16.5%;
+  left: -16.5%;
+  background-size:100% 32.5%;
+  background-repeat: no-repeat;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+}
+
+.squable:after {
+  bottom: 0;
+  height: 42%;
+  left: 0;
+  right: 0;
+  border-bottom-right-radius: 50% 80%;
+  border-bottom-left-radius: 50% 80%;
+  border-top-right-radius: 4px 25px;
+  border-top-left-radius: 4px 25px;
 }

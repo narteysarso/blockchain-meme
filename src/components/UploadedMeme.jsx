@@ -7,7 +7,7 @@ export function UploadedMeme ({history, ...props}) {
         <Row gutter={16} style={{ padding: '10px', }} justify="center">
             { history.length ? 
                 history?.map((item, idx) => (
-                    <Col span={4} key={idx}>
+                    <Col span={4} xs={12} md={6} lg={4} key={idx}>
                         <Card className="grid-style" style={{ width: '100%' }}
                             actions={[]}
                             cover={

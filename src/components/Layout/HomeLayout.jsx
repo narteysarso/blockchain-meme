@@ -10,7 +10,7 @@ export default function HomeLayout ({children}){
                     <Logo /> 
                     <Typography.Title level={3} className="pl-1"> BlockMeme </Typography.Title>
                 </div>
-                    <Typography.Title level={5} style={{alignSelf: "end", color: "tomato"}}>This DApp works only on the Ropsten Test Network</Typography.Title>
+                    
             </Layout.Header>
             <Layout.Content className="main p-1">
                 {children}
